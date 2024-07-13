@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">crudlibro</string>
+
+
+    <string name="str_btnbuscar">Buscar Libro</string>
+    <string name="str_btnregistrar">Registrar Libro</string>
+    <string name="str_btnlistar">Listar Libros</string>
+    <string name="str_btnlistar2">Listar Libros2</string>
+    <string name="str_btntutorial">Tutorial</string>
+
+
+    <string name="str_titulo">Título</string>
+    <string name="str_subtitulo">Subtítulo</string>
+    <string name="str_autor">Autor</string>
+    <string name="str_anio_publicacion">Año Publicación</string>
+    <string name="str_precio">Precio</string>
+
+    <string name="str_btnGuardar">Guardar Libro</string>
+    <string name="str_btnModificar">Editar Libro</string>
+    <string name="str_btnEliminar">Eliminar Libro</string>
+
+
+    <string name="str_bienvenido">Bienvenidos</string>
+    <string name="str_description_imagen">Todo</string>
+    <string name="str_listarLibros">Lista de Libros</string>
+    <string name="str_gestionLibros">Gestión de Libros</string>
+    <string name="str_buscarLibros">Buscar Libro x título</string>
+    <string name="str_digitetititulo">Digite el título a buscar</string>
+
+
+</resources>

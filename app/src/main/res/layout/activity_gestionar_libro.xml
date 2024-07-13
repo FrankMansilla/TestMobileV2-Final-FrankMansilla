@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GestionarLibroActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:text="@string/str_gestionLibros"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="#3f9147"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_titulo"
+        />
+
+     <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ges_txttitulo"
+        android:hint="@string/str_titulo"
+        android:inputType="text"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_subtitulo"
+        />
+
+    <EditText
+        android:id="@+id/ges_txtsubtitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:hint="@string/str_subtitulo"
+        android:inputType="text"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_autor"
+        />
+
+    <EditText
+        android:id="@+id/ges_txtautor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:hint="@string/str_autor"
+        android:inputType="text"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_anio_publicacion"
+        />
+
+    <EditText
+        android:id="@+id/ges_txtaniopublicacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:hint="@string/str_anio_publicacion"
+        android:inputType="text"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_precio"
+        />
+
+    <EditText
+        android:id="@+id/ges_txtprecio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:hint="@string/str_precio"
+        android:inputType="text"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/ges_btnGuardar"
+            android:text="@string/str_btnGuardar"
+            android:onClick="onClick"
+
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/ges_btnModificar"
+            android:text="@string/str_btnModificar"
+            android:onClick="onClick"
+
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/ges_btnEliminar"
+            android:text="@string/str_btnEliminar"
+            android:onClick="onClick"
+            />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
