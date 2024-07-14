@@ -26,6 +26,8 @@
     <string name="str_gestionLibros">Gestión de Libros</string>
     <string name="str_buscarLibros">Buscar Libro x título</string>
     <string name="str_digitetititulo">Digite el título a buscar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

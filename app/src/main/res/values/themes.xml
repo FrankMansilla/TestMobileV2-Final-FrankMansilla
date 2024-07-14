@@ -4,12 +4,25 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
-        <item name="colorPrimary">@color/verde</item>
-        <item name="colorPrimaryVariant">@color/verde</item>
+        <item name="colorPrimary">@color/geeen_normal</item>
+        <item name="colorPrimaryVariant">@color/geeen_dark</item>
+        
+        
+        
 
     </style>
 
     <style name="Theme.Crudlibro" parent="Base.Theme.Crudlibro" />
+    
+    
+    <style name="btn_navigation">
+
+        <item name="android:background">@color/geeen_dark</item>
+        <item name="itemIconTint">@color/geeen_light_2</item>
+        <item name="itemTextColor">@color/geeen_light_2</item>
+
+
+    </style>
 
 
 

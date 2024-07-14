@@ -3,11 +3,17 @@ package com.example.crudlibro;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -15,11 +21,60 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Context context;
     Button btnListar, btnBuscar, btnRegistrar, btnListar2, btntutorial;
 
+    FirstFragment firstFragment = new FirstFragment();
+    SecondFragment secondFragment = new SecondFragment();
+    ThirdFragment thirdFragment = new ThirdFragment();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        BottomNavigationView navigation = findViewById(R.id.btn_navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
         init();
+    }
+
+    private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            int itemId = item.getItemId();
+
+            if (itemId == R.id.btnregistrar) {
+                loadFragment(firstFragment);
+                Intent intent = new Intent(context, GestionarLibroActivity.class);
+                Toast.makeText(context, "Registrar", Toast.LENGTH_SHORT).show();
+                Bundle bolsa = new Bundle();
+                bolsa.putInt("id", 0);
+                intent.putExtras(bolsa);
+
+                startActivity(intent);
+                return true;
+            } else if (itemId == R.id.secondFragment) {
+                loadFragment(secondFragment);
+                Intent intent = new Intent(context, BuscarLibroActivity.class);
+                startActivity(intent);
+                Toast.makeText(context, "Buscar", Toast.LENGTH_SHORT).show();
+                return true;
+            } else if (itemId == R.id.thirdFragment) {
+                loadFragment(thirdFragment);
+                Intent intent = new Intent(context, ListadoLibrosActivity.class);
+                startActivity(intent);
+                Toast.makeText(context, "Listar", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+
+            return false;
+        }
+    };
+
+
+
+    public void loadFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, fragment);
+        transaction.commit();
     }
 
     private void init() {
@@ -56,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else if (view.getId() == R.id.btntutorial) {
             Intent intent = new Intent(context, EmbedVideoYoutube.class);
             startActivity(intent);
-            Toast.makeText(context, "Listar2", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Tutorial", Toast.LENGTH_SHORT).show();
         }
     }
 }

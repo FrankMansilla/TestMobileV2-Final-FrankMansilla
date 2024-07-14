@@ -3,4 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="verde">#1DA92B</color>
+
+
+
+    <color name="geeen_dark">#062925</color>
+    <color name="geeen_normal">#044a42</color>
+    <color name="geeen_light">#3a9188</color>
+    <color name="geeen_light_2">#b8e1dd</color>
 </resources>
