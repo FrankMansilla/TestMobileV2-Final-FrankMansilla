@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 loadFragment(fifthFragment);
                 Intent intent = new Intent(context, EmbedVideoYoutube.class);
                 startActivity(intent);
-                Toast.makeText(context, "Turorial", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Tutorial", Toast.LENGTH_SHORT).show();
                 return true;
             }
 
