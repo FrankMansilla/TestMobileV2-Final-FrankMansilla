@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     FirstFragment firstFragment = new FirstFragment();
     SecondFragment secondFragment = new SecondFragment();
     ThirdFragment thirdFragment = new ThirdFragment();
+    FourthFragment fourthFragment = new FourthFragment();
+    FifthFragment fifthFragment = new FifthFragment();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +39,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         init();
     }
 
+
+    //Bottom Navigation
     private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             int itemId = item.getItemId();
 
-            if (itemId == R.id.btnregistrar) {
+            if (itemId == R.id.firstFragment) {
                 loadFragment(firstFragment);
                 Intent intent = new Intent(context, GestionarLibroActivity.class);
                 Toast.makeText(context, "Registrar", Toast.LENGTH_SHORT).show();
@@ -63,6 +68,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 Toast.makeText(context, "Listar", Toast.LENGTH_SHORT).show();
                 return true;
+            } else if (itemId == R.id.fourthFragment) {
+                loadFragment(fourthFragment);
+                Intent intent = new Intent(context, ListadoLibros2Activity.class);
+                startActivity(intent);
+                Toast.makeText(context, "Listar 2 (ReciclerView)", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+            else if (itemId == R.id.fifthFragment) {
+                loadFragment(fifthFragment);
+                Intent intent = new Intent(context, EmbedVideoYoutube.class);
+                startActivity(intent);
+                Toast.makeText(context, "Turorial", Toast.LENGTH_SHORT).show();
+                return true;
             }
 
             return false;
@@ -77,6 +95,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         transaction.commit();
     }
 
+
+    //Init View Objects
     private void init() {
         context = getApplicationContext();
         btnRegistrar = findViewById(R.id.btnregistrar);
@@ -86,6 +106,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btntutorial = findViewById(R.id.btntutorial);
     }
 
+
+    //Buttom OnClick
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btnregistrar) {
