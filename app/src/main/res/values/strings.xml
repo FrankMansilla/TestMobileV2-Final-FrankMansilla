@@ -5,7 +5,7 @@
     <string name="str_btnbuscar">Buscar Libro</string>
     <string name="str_btnregistrar">Registrar Libro</string>
     <string name="str_btnlistar">Listar Libros</string>
-    <string name="str_btnlistar2">Listar Libros2</string>
+    <string name="str_btnlistar2">Listar Libros (Recicler View)</string>
     <string name="str_btntutorial">Tutorial</string>
 
 

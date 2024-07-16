@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/firstFragment"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Agregar"/>
+
+    <item
+        android:id="@+id/secondFragment"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Buscar"/>
+
+    <item
+        android:id="@+id/thirdFragment"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="Listar"/>
+
+    <item
+        android:id="@+id/fourthFragment"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="Listar2"/>
+
+    <item
+        android:id="@+id/fifthFragment"
+        android:icon="@android:drawable/ic_menu_slideshow"
+        android:title="Tutorial"/>
+
+
+</menu>
