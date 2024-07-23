@@ -3,6 +3,9 @@ package com.example.crudlibro;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,6 +47,58 @@ public class GestionarLibroActivity extends AppCompatActivity implements View.On
         btnactualizar = findViewById(R.id.ges_btnModificar);
         btnborrar = findViewById(R.id.ges_btnEliminar);
 
+        txtaniopublicacion.setInputType(InputType.TYPE_CLASS_NUMBER);
+        txtprecio.setInputType(InputType.TYPE_CLASS_NUMBER);
+        txttitulo.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // No se necesita implementar
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                validarTitulo();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // No se necesita implementar
+            }
+        });
+
+        txtaniopublicacion.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // No se necesita implementar
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                validarAnioPublicacion();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // No se necesita implementar
+            }
+        });
+
+        txtprecio.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // No se necesita implementar
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                validarPrecio();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // No se necesita implementar
+            }
+        });
 
         Intent i = getIntent();
         Bundle bolsa = i.getExtras();
@@ -56,14 +111,10 @@ public class GestionarLibroActivity extends AppCompatActivity implements View.On
             txtprecio.setText( bolsa.getDouble("precio") + "" );
 
             btnguardar.setEnabled(false);
-
-
         }else{
-            //logica para que cuando el id sea 0 los botones se apaguen
             btnactualizar.setEnabled(false);
             btnborrar.setEnabled(false);
         }
-
     }
 
     private void limpiarCampos(){
@@ -135,4 +186,35 @@ public class GestionarLibroActivity extends AppCompatActivity implements View.On
             borrar();
         }
     }
+
+    private void validarTitulo() {
+        String titulo = txttitulo.getText().toString();
+        if (!titulo.matches("[a-zA-Z0-9\\s]+")) {
+            txttitulo.setError("Solo se permiten letras y números");
+            btnguardar.setEnabled(false);
+        } else {
+            btnguardar.setEnabled(true);
+        }
+
+    }
+
+private void validarAnioPublicacion() {
+    String anio = txtaniopublicacion.getText().toString();
+    if (!anio.matches("\\d+")) {
+        txtaniopublicacion.setError("Solo se permiten números");
+        btnguardar.setEnabled(false);
+    } else {
+        btnguardar.setEnabled(true);
+    }
+}
+private void validarPrecio() {
+    String precio = txtprecio.getText().toString();
+    if (!precio.matches("\\d*\\.?\\d+")) {
+        txtprecio.setError("Solo se permiten números y un punto decimal");
+        btnguardar.setEnabled(false);
+    } else {
+        btnguardar.setEnabled(true);
+    }
+}
+
 }//Gestionar Libro

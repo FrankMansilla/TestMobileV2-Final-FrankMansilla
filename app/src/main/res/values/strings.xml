@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">crudlibro</string>
 
+    <string name="srt_presentacion">Aplicacion desarrollada con la finalidad de aprobar la materia Desarrollo De Aplicaciones Moviles del Instituto N°27. Desarrollada por Frank Mansilla, 2024.</string>
+
 
     <string name="str_btnbuscar">Buscar Libro</string>
     <string name="str_btnregistrar">Registrar Libro</string>

@@ -16,7 +16,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:background="@color/geeen_dark"
-        android:text="Aplicacion desarrollada con la finalidad de aprobar la materia 'desarrollo de aplicaciones moviles' del instituto N°27. Desarrollada por Frank Mansilla, 2024."
+        android:text="@string/srt_presentacion"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="15dp"
